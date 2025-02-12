@@ -1,0 +1,39 @@
+.Market {
+    width: 360px;
+    text-align: left;
+    display: flex;
+}
+
+#image-star{
+    width: 20px;
+    height: 20px;
+}
+
+#image-point{
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+}
+
+.texts{
+    display: block;
+}
+
+.sub-texts{
+    display: flex;
+    align-items: center;
+}
+
+.sub-texts p{
+    margin: 0;
+    margin-left: 5px;
+}
+
+#descricoes-mercado-pesquisa{
+    margin-bottom: 10px;
+    margin-left: 10px
+}
+
+.store{
+    display: block;
+}

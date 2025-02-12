@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Perto</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/modal.css">
+    <link rel="stylesheet" href="CSS/perfilMarket.css">
+    <link rel="stylesheet" href="CSS/products.css">
+    <link rel="stylesheet" href="CSS/search.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Mercado Perto</div>
+        <div class="search-container">
+            <input id="search-input" type="text" placeholder="Pesquise itens do Mercado">
+            <button id="search-bnt"><img src="imagens/lupa.png"  alt="Lupa"></button>
+        </div>
+        <div class="user-icon">
+            <img src="imagens/iconamoon_profile-fill.png" alt="">
+        </div>
+    </header>
+    <main>
+        <section class="container market-info">
+            <img src="imagens/logo.png" alt="Logo do Mercado">
+            <div class="details">
+                <h1>Nome Mercado</h1>
+                <p>Endereço | Telefone | Horário de funcionamento</p>
+                <p>Descrição</p>
+            </div>
+        </section>
+        <section class="container categories">
+            <div class="category">
+                <img src="imagens/limpeza.png" alt="Produtos de limpeza">
+                <p>Produtos de limpeza</p>
+            </div>
+            <div class="category">
+                <img src="imagens/hortifruti.png" alt="Hortifruti">
+                <p>Hortifruti</p>
+            </div>
+            <div class="category">
+                <img src="imagens/nao-pereciveis.png" alt="Não perecíveis">
+                <p>Não perecíveis</p>
+            </div>
+        </section>
+        <section class="container best-sellers">
+            <h2>Mais vendidos</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="imagens/arroz.png" alt="Arroz">
+                    <p><strong>R$5,99</strong></p>
+                    <p>Arroz Chinês 1Kg</p>
+                </div>
+                <div class="product">
+                    <img src="imagens/pao.png" alt="Pão">
+                    <p><strong>R$6,99</strong></p>
+                    <p>Pão de Forma Integral Visconti</p>
+                </div>
+                <div class="product">
+                    <img src="imagens/frango.png" alt="Filé de Frango">
+                    <p><strong>R$12,99</strong></p>
+                    <p>Filé de Peito de Frango Seara</p>
+                </div>
+                <div class="product">
+                    <img src="imagens/detergente.png" alt="Detergente">
+                    <p><strong>R$2,29</strong></p>
+                    <p>Detergente Ypê Coco 500ml</p>
+                </div>
+                <div class="product">
+                    <img src="imagens/margarina.png" alt="Margarina">
+                    <p><strong>R$5,99</strong></p>
+                    <p>Margarina Qualy com Sal 1Kg</p>
+                </div>
+                <div class="product">
+                    <img src="imagens/agua-sanitaria.png" alt="Água Sanitária">
+                    <p><strong>R$10,10</strong></p>
+                    <p>Ypê Água Sanitária 2L</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Modal de Adição ao Carrinho -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar ao Carrinho</h2>
+            <img id="modal-img" src="" alt="Produto">
+            <p id="modal-title"></p>
+            <p id="modal-price"></p>
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" min="1" value="1">
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+<script defer src="script.js"></script>
+</body>
+</html>

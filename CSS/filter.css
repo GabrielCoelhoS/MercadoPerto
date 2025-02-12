@@ -1,0 +1,33 @@
+.filter-bar {
+    display: flex;
+    gap: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.filter-bar button {
+    width: 125px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-bar button:hover {
+    background: #f0f0f0;
+}
+
+.filter-bar .filter-icon {
+    width: 20px;
+    height: 20px;
+    margin: -5px;
+    font-size: 18px;
+    margin-left: 5px;
+}
+#filter-menu{
+    display: none;
+}

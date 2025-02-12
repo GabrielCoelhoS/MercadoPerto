@@ -1,0 +1,25 @@
+.Markets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.Market {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+}
+
+.Market img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.IndicacaoMercados{
+    display: block;
+}
