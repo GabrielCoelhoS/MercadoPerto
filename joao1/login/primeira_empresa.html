@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercado Perto</title>
+  <link rel="stylesheet" href="empresa.css">
+</head>
+<body>
+  <header>
+    <h1>Mercado Perto</h1>
+    <button id="menu-btn">☰</button>
+    <!-- Menu dropdown dentro do header (opcional) -->
+    <nav id="header-menu" class="hidden">
+      <ul>
+        <!-- Essas opções possuem link e redirecionam -->
+        <li><a href="relatorio.html">Relatório semanal de vendas</a></li>
+        <li><a href="conectar.html">Conectar PDV/ERP</a></li>
+        <!-- Essas opções abrem uma tela no próprio site -->
+        <li id="gerenciar-temas">Gerenciar temas</li>
+        <li id="adicionar-market-info">Adicionar informações nas market-info</li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="market-info">
+    <div class="market-card">
+      <img src="foto_loja.png" alt="Logo do mercado">
+      <div class="market-details">
+        <h2><span id="nome-mercado">Nome mercado: </span></h2>
+        <p><span id="endereco">Endereço: </span></p>
+        <p><span id="bairro">Bairro: </span></p>
+        <p><span id="numero">Número: </span></p>
+        <p><span id="telefone">Telefone: </span></p>
+        <p><span id="descricao">Descrição: </span></p>
+      </div>
+      <button class="edit-btn">✎</button>
+    </div>
+  </section>
+  
+  <section id="categories">
+
+    <div id="categories">
+      
+    </div>
+    
+    <button class="add-category">+</button>
+  </section>
+  
+  <section id="product-registration">
+    <p>Cadastre os seus produtos no Mercado Perto manualmente ou pela integração com sistemas de gerenciamento de estoque.</p>
+    <div class="register-buttons">
+      <button class="register-btn" id="manual-register-btn">Cadastrar manualmente</button>
+      <button class="register-btn">Cadastro automático</button>
+    </div>
+  </section>
+  
+  <section id="best-sellers">
+    <h3>produtos</h3>
+    <!-- Agora os produtos serão inseridos dinamicamente -->
+    <div class="products"></div>
+  </section>
+
+  <!-- Modal para cadastro manual de produtos -->
+  <div id="manual-product-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-modal-btn">&times;</button>
+      <div class="modal-body">
+        <!-- Caixa para envio de foto -->
+        <div class="upload-container">
+          <label for="productImage" class="upload-label">
+            <div class="upload-box">
+              <p class="upload-icon">↑</p>
+              <p>Envie uma foto do produto</p>
+            </div>
+          </label>
+          <input type="file" id="productImage" class="hidden" accept="image/*" />
+        </div>
+
+        <!-- Formulário de cadastro -->
+        <form id="manual-product-form">
+          <div class="form-field">
+            <label for="productName">Nome do produto</label>
+            <input type="text" id="productName" placeholder="Ex: Café" required />
+          </div>
+
+          <div class="form-field">
+            <label for="productDescription">Descrição</label>
+            <input type="text" id="productDescription" placeholder="Ex: 250g" />
+          </div>
+
+          <div class="form-field">
+            <label for="productPrice">Preço</label>
+            <input type="text" id="productPrice" placeholder="R$7,89" />
+          </div>
+
+          <div class="form-field">
+            <label for="productStock">Quantidade no estoque</label>
+            <input type="number" id="productStock" placeholder="Ex: 10" />
+          </div>
+
+          <!-- Novo campo: Sessão do Produto -->
+          <div class="form-field">
+            <label for="productSession">Sessão do Produto</label>
+            <select id="productSession" required>
+              <option value="">Selecione a sessão</option>
+              <option value="Não Perecíveis">Não Perecíveis</option>
+              <option value="Hortifruti">Hortifruti</option>
+              <option value="Produtos de Limpeza">Produtos de Limpeza</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="save-product-btn" class="save-btn">Salvar</button>
+            <button type="button" id="cancel-product-btn" class="cancel-btn">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal para cadastro de categoria/sessão -->
+  <div id="category-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-modal-btn" id="close-category-modal">&times;</button>
+      <div class="modal-body">
+        <div class="upload-container">
+          <label for="categoryImage" class="upload-label">
+            <div class="upload-box">
+              <p class="upload-icon">↑</p>
+              <p>Envie uma foto da sessão</p>
+            </div>
+          </label>
+          <input type="file" id="categoryImage" class="hidden" accept="image/*" />
+        </div>
+        <div class="form-field">
+          <label for="categoryName">Nome da sessão</label>
+          <input type="text" id="categoryName" placeholder="Ex: Bebidas" required />
+        </div>
+        <div class="form-actions">
+          <button type="button" id="save-category-btn" class="save-btn">Salvar</button>
+          <button type="button" id="cancel-category-btn" class="cancel-btn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal para Gerenciar Temas -->
+<div id="modal-gerenciar-temas" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal-btn">&times;</button>
+    <h2>Gerenciar Temas</h2>
+    <p>Escolha uma cor para alterar o fundo do market-info:</p>
+    <input type="color" id="theme-color" value="#ffffff">
+    <button id="apply-theme-btn">Aplicar</button>
+  </div>
+</div>
+
+
+  <!-- Modal para Adicionar Informações nas market-info -->
+<div id="modal-market-info" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal-btn">&times;</button>
+    <h2>Adicionar Informação</h2>
+    <label for="info-key">Qual informação deseja adicionar? (ex: Cidade)</label>
+    <input type="text" id="info-key" placeholder="Cidade">
+    <label for="info-value">Digite o valor para essa informação (ex: Picos)</label>
+    <input type="text" id="info-value" placeholder="Picos">
+    <button id="add-info-btn">Adicionar Informação</button>
+  </div>
+</div>
+  
+  <script src="empresa.js"></script>
+</body>
+</html>
