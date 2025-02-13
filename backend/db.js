@@ -1,26 +1,33 @@
-const { Client } = require('pg');
+const mysql = require('mysql2');
 require('dotenv').config();
 
-const client = new Client({
-  host: process.env.PG_HOST,
-  port: process.env.PG_PORT || 5432,
-  user: process.env.PG_USER,
-  password: process.env.PG_PASSWORD,
-  database: process.env.PG_DATABASE
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 3306,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
-client.connect()
-  .then(() => console.log('Conectado ao banco de dados '))
-  .catch((err) => console.error('Erro ao conectar ao banco de dados', err.stack));
+connection.connect((err) => {
+  if (err) {
+    console.error('Erro ao conectar ao banco de dados', err.stack);
+    return;
+  }
+  console.log('Conectado ao banco de dados MySQL');
+});
 
 const query = async (sql) => {
-  try {
-    const res = await client.query(sql);
-    return res.rows;
-  } catch (err) {
-    console.error('Erro na consulta SQL', err.stack);
-    throw err;
-  }
+  return new Promise((resolve, reject) => {
+    connection.query(sql, (err, results) => {
+      if (err) {
+        console.error('Erro na consulta SQL', err.stack);
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
 };
 
 module.exports = { query };
