@@ -8,7 +8,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fffafa;
-    background-image: url('teste 2.jpeg'); /* Imagem de fundo */
+    background-image: url('../imagens/login2.jpeg'); /* Imagem de fundo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
