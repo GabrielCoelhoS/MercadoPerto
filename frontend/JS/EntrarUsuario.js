@@ -15,7 +15,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
       alert(`Bem-vindo, ${user.nome}!`);
       
       // Redireciona para a página inicial ou a área protegida
-      window.location.href = 'pagina_inicial.html'; // Ajuste conforme necessário
+      window.location.href = '../HTML/TelaInicialCliente.html'; // Ajuste conforme necessário
   } else {
       alert('E-mail ou senha inválidos. Tente novamente.');
   }
