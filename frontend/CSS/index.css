@@ -1,8 +1,15 @@
 /* Estilos gerais */
+/* Define a imagem de fundo para o corpo */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-image: url('../imagens/fundo1.jpg'); /* Substitua pelo caminho correto */
+    background-size: cover; /* Faz a imagem preencher a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Garante que o fundo fique fixo */
+    color: black;
 }
+
 
 /* Barra de navegação */
 .navbar {
@@ -24,46 +31,86 @@ body {
     text-decoration: none;
     margin: 0 10px;
     font-size: 1rem;
-    transition: color 0.3s;
 }
 
-.navbar-links a:hover {
+.navbar-links a.highlight {
     color: #ffc107;
+}
+
+.navbar-links a.login-button {
+    background-color: #ffc107;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 /* Seção hero */
 .hero-section {
-    background-image: url('../images/background.jpg');
-    background-size: cover;
+    position: relative;
+    
     background-position: center;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: black;
+    color: rgb(255, 255, 255);
+
 }
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+    z-index: 1;
+}
+
+.hero-content {
+    padding: 20px;
+    border-radius: 10px; /* Arredonda os cantos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+    position: relative;
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima da sobreposição */
+
+}
+
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+    color: #ffffff; /* Cor mais forte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra no texto */
 }
 
 .hero-content p {
-    font-size: 1.2rem;
     margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Cor mais forte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra no texto */
 }
-
+a{
+    color: white;
+    text-decoration: none;
+}
 .cta-button {
     background-color: #ffc107;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 
 .cta-button:hover {
     background-color: #e0a800;
 }
+ /* Estilo para o fundo */
+ 

@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Configurar o botão "Voltar" para redirecionar para a página anterior
     document.querySelector('.btn-back').addEventListener('click', () => {
-        window.location.href = "login_2.html";  // Altere conforme necessário para redirecionar corretamente
+        window.location.href = "../HTML/CadastroInfoLocalizacaoEmpresa.html";  // Altere conforme necessário para redirecionar corretamente
     });
 
     // Botão "Continuar" - mensagem de sucesso
     document.querySelector('.btn-submit').addEventListener('click', (event) => {
         event.preventDefault();
-        window.location.href = "primeira_empresa.html";
+        window.location.href = "../HTML/primeira_empresa.html";
     });
 });
