@@ -67,12 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("numero", numero);
         localStorage.setItem("complemento", complemento);
 
-        window.location.href = "pagina-final.html";
+        window.location.href = "../HTML/ConfirmacaoInfos.html";
     });
 
     const voltarBtn = document.querySelector(".btn-voltar");
     voltarBtn.addEventListener("click", () => {
-        window.location.href = "login_1.html";
+        window.location.href = "../HTML/CadastroInfoEmpresariais.html";
     });
 });
 
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Configurar o botão "Voltar" para redirecionar para a página anterior
     document.querySelector('.btn-back').addEventListener('click', () => {
-        window.location.href = "login_2.html";  // Altere conforme necessário para redirecionar corretamente
+        window.location.href = "../HTML/CadastroInfoEmpresariais.html";  // Altere conforme necessário para redirecionar corretamente
     });
 
     // Botão "Continuar" - mensagem de sucesso

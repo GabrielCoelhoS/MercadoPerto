@@ -33,7 +33,7 @@ body {
 
 /* Seção hero */
 .hero-section {
-    background-image: url('../images/background.jpg');
+    background-image: url('frontend/imagens/fundo1.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
