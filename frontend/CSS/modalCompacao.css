@@ -1,0 +1,51 @@
+#modalComparacao {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    text-align: center;
+}
+
+#modalComparacao h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.comparacao-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.preco-produto {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.loja-status {
+    font-weight: bold;
+}
+
+.aberto {
+    color: green;
+}
+
+.fechado {
+    color: red;
+}
+
+#btnFechar {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botaoFecharComparacao:hover {
+    background-color: #c82333;
+}
