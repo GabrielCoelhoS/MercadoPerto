@@ -33,8 +33,7 @@ function criarModalComparacao() {
     document.getElementById("btnConfirmar").addEventListener("click", () => {
         alert("Comparação iniciada!");
     });
-
-    return modal;
+    return;
 }
 
 function adicionarBotoesAdicionar() {
@@ -56,12 +55,14 @@ function adicionarBotoesAdicionar() {
 function adicionarAoComparador(produto) {
     const nome = produto.querySelector(".nome-produto").innerText;
     const preco = produto.querySelector(".preco-produto").innerText;
+    const imagem = produto.querySelector(".imagem-produto").src;
 
-    const item = { nome, preco };
+    const item = { nome, preco, imagem };
 
     if (!itensSelecionados.some(i => i.nome === item.nome)) {
         itensSelecionados.push(item);
         atualizarComparador();
+        console.log("Item adicionado:", item);
     }
 }
 
@@ -76,18 +77,26 @@ function atualizarComparador() {
 
     itensSelecionados.forEach(item => {
         const div = document.createElement("div");
-        div.classList.add("product mini");
-        div.innerHTML = `<strong>${item.nome}</strong> - ${item.preco}`;
+        div.classList.add("product", "mini");
+        div.innerHTML = `<img class="imagem-produto" src="${item.imagem}" alt="${item.nome}">
+                         <p class="preco-produto"><strong>${item.preco}</strong></p>  
+                         <p class="nome-produto">${item.nome}</p>`;
         itensContainer.appendChild(div);
     });
 
     modal.style.display = "block";
 }
 
+
+
 btnComparar.addEventListener("click", () => {
+    adicionarBotoesAdicionar();
     if (itensSelecionados.length > 0) {
-        adicionarBotoesAdicionar();
         atualizarComparador();
+    } else{
+        criarModalComparacao();
     }
+    
+    
 });
 

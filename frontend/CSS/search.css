@@ -16,6 +16,7 @@
 }
 
 .search-container #search-bnt {
+    padding: 0;
     background-color: transparent;
     cursor: pointer;
     border: none;
