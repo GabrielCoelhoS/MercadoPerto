@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Usuário</title>
+    <link rel="stylesheet" href="../CSS/informacoesUsuario.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">Mercado Perto</h1>
+    </header>
+    <main class="main-container">
+        <section class="user-options">
+            <button id="info-btn">Informações do Usuário</button>
+            <button id="edit-btn">Editar Informações</button>
+            <button id="cart-btn">Ver Carrinho</button>
+            <button id="history-btn">Histórico de Compras</button>
+        </section>
+        
+        <section id="user-info" class="hidden">
+            <h2>Seus Dados</h2>
+            <p><strong>Nome:</strong> <span id="user-name"></span></p>
+            <p><strong>Sobrenome:</strong> <span id="user-surname"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Senha:</strong> <span id="user-password"></span></p>
+        </section>
+
+        <div id="edit-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Informações</h2>
+                <label>Nome: <input type="text" id="edit-name"></label>
+                <label>Sobrenome: <input type="text" id="edit-surname"></label>
+                <label>Email: <input type="email" id="edit-email"></label>
+                <label>Senha: <input type="password" id="edit-password"></label>
+                <button id="save-btn">Salvar</button>
+            </div>
+        </div>
+    </main>
+    <script src="../JS/informacoesUsuario.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const userInfoSection = document.getElementById("user-info");
+            const editModal = document.getElementById("edit-modal");
+            const closeModal = document.querySelector(".close");
+            
+            document.getElementById("info-btn").addEventListener("click", () => {
+                const userData = JSON.parse(localStorage.getItem("user")) || {};
+                document.getElementById("user-name").textContent = userData.nome || "Não informado";
+                document.getElementById("user-surname").textContent = userData.sobrenome || "Não informado";
+                document.getElementById("user-email").textContent = userData.email || "Não informado";
+                document.getElementById("user-password").textContent = userData.senha || "Não informado";
+                userInfoSection.classList.toggle("hidden");
+            });
+            
+            document.getElementById("edit-btn").addEventListener("click", () => {
+                editModal.classList.remove("hidden");
+            });
+            
+            closeModal.addEventListener("click", () => {
+                editModal.classList.add("hidden");
+            });
+            
+            document.getElementById("save-btn").addEventListener("click", () => {
+                const updatedUser = {
+                    nome: document.getElementById("edit-name").value,
+                    sobrenome: document.getElementById("edit-surname").value,
+                    email: document.getElementById("edit-email").value,
+                    senha: document.getElementById("edit-password").value
+                };
+                localStorage.setItem("user", JSON.stringify(updatedUser));
+                alert("Informações atualizadas com sucesso!");
+                editModal.classList.add("hidden");
+            });
+        });
+    </script>
+</body>
+</html>

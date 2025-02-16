@@ -421,6 +421,15 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModal(modalMarketInfo);
   });
 
+  function excluirCategoria(id) {
+    let categories = JSON.parse(localStorage.getItem("categories")) || [];
+    // Remove a categoria com o id correspondente
+    categories = categories.filter((category) => category.id !== id);
+    localStorage.setItem("categories", JSON.stringify(categories));
+    // Atualiza a área de categorias na interface
+    carregarCategorias();
+  }
+
   function carregarCustomMarketInfo() {
     let customMarketInfo = JSON.parse(localStorage.getItem("customMarketInfo")) || [];
     const marketDetailsDiv = document.querySelector("#market-info .market-details");
