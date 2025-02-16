@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const fs = require('fs');
-const db = require("C:/Users/Italo/Documents/Meu_projeto/Servidor/db.js");
+const db = require("https://github.com/GabrielCoelhoS/MercadoPerto/tree/main/backend");
 
 app.use(cors());
 app.use(express.json()); // Para parsear JSON no corpo da requisição
