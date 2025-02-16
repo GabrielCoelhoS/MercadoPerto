@@ -38,12 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =======================================================
      2. Carregar os produtos cadastrados (localStorage)
      ======================================================= */
-  const productsContainer = document.querySelector(".IndicacaoProdutos .products");
-  if (productsContainer) {
-      productsContainer.style.justifyContent = "flex-start";
-      productsContainer.innerHTML = "";
+  const products = document.querySelector(".IndicacaoProdutos .products");
+  if (products) {
+      products.style.justifyContent = "flex-start";
+      products.innerHTML = "";
   }
-
+  const productsContainer = document.createElement("div");
+  productsContainer.classList.add("products-container");
   const storedProducts = JSON.parse(localStorage.getItem("produtos")) || [];
   storedProducts.forEach(product => {
       const productCard = document.createElement("div");
@@ -54,23 +55,23 @@ document.addEventListener("DOMContentLoaded", () => {
       productImg.alt = product.productName || "Produto sem nome";
       productCard.appendChild(productImg);
 
-      const nameP = document.createElement("p");
-      nameP.textContent = "Nome: " + (product.productName || "Não informado");
-      productCard.appendChild(nameP);
+      const nameProduct = document.createElement("p");
+      nameProduct.textContent = "Nome: " + (product.productName || "Não informado");
+      productCard.appendChild(nameProduct);
 
-      const priceP = document.createElement("p");
-      priceP.textContent = "Preço: " + (product.productPrice || "R$0,00");
-      productCard.appendChild(priceP);
+      const priceProduct = document.createElement("p");
+      priceProduct.textContent = "Preço: " + (product.productPrice || "R$0,00");
+      productCard.appendChild(priceProduct);
 
-      const descP = document.createElement("p");
-      descP.textContent = "Descrição: " + (product.productDescription || "Sem descrição");
-      productCard.appendChild(descP);
+      /*const descProduct = document.createElement("p");
+      descProduct.textContent = "Descrição: " + (product.productDescription || "Sem descrição");
+      productCard.appendChild(descProduct);
 
       const sessionP = document.createElement("p");
       sessionP.textContent = "Sessão: " + (product.productSession || "Não definida");
-      productCard.appendChild(sessionP);
+      productCard.appendChild(sessionP);*/
 
-      if (productsContainer) {
+      if (products) {
           productsContainer.appendChild(productCard);
       }
   });

@@ -6,7 +6,7 @@
     <title>Pesquisa de Produto</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/filter.css">
-    <link rel="stylesheet" href="../CSS/modal.css">
+    <link rel="stylesheet" href="../CSS/modalAdicionar.css">
     <link rel="stylesheet" href="../CSS/modalComparacao.css">
     <link rel="stylesheet" href="../CSS/modalSelecaoParaComparacao.css">
     <link rel="stylesheet" href="../CSS/layout.css">
@@ -48,15 +48,17 @@
         <section class="results" id="productAndMarket">
             <h2>Resultados</h2>
             <div class="container store">
-                <h2>Mercado do Fulano</h2>
+                <h2 class="loja">Mercado do Fulano</h2>
                 <div class="sub-texts" id="descricoes-mercado-pesquisa">
-                    <img src="../imagens/ic_round-star.png" alt=""><p>4.7 • Fechado</p>
+                    <img src="../imagens/ic_round-star.png" alt=""><p class="mercadoAvaliacao">4.7</p><p> • </p><p class="loja-status">Fechado</p>
                 </div>
                 <div class="products">
-                    <div class="product">
-                        <img class="imagem-produto" src="../imagens/arroz.png" alt="Arroz">
-                        <p class="preco-produto" id="preco-produto"><strong>R$5,99</strong></p>
-                        <p class="nome-produto" id="nome-produto">Arroz Chinês 1Kg</p>
+                    <div class="product-container">
+                        <div class="product">
+                            <img class="imagem-produto" src="../imagens/arroz.png" alt="Arroz">
+                            <p class="preco-produto" id="preco-produto"><strong>R$5,99</strong></p>
+                            <p class="nome-produto" id="nome-produto">Arroz Chinês 1Kg</p>
+                        </div>
                     </div>
                     <div class="product">
                         <img class="imagem-produto" src="../imagens/pao.png" alt="Pão">
@@ -139,6 +141,7 @@
         </div>
     </div>
     <script defer type="module" src="../JS/main.js"></script>
-    <script defer src="../JS/components/modalSelecaoParaComparacao.js"></script>
+    <script defer type="module" src="../JS/components/modalSelecaoParaComparacao.js"></script>
+    <script defer type="module" src="../JS/components/modalAdicionar.js"></script>
 </body>
 </html>

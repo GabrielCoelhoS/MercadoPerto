@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".product").forEach(product => {
         product.addEventListener("click", function () {
+            const head = document.querySelector("head");
+            head.innerHTML += `
+                <link rel="stylesheet" href="/frontend/css/modalAdicionar.css">
+            `;
             const imgSrc = this.querySelector("img").src;
             const title = this.querySelector("p:nth-child(3)").textContent;
             const price = this.querySelector("p:nth-child(2)").textContent;

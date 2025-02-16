@@ -11,6 +11,7 @@ function criarModalSelecionarParaComparacao() {
     const modal = document.createElement("div");
     modal.id = "modalSelecionarParaComparacao";
     modal.classList.add("modal");
+    modal.style.display = "none";
 
     modal.innerHTML = `
         <div class="modal-content">
@@ -28,18 +29,26 @@ function criarModalSelecionarParaComparacao() {
     document.getElementById("btnCancelar").addEventListener("click", () => {
         itensSelecionados = [];
         modal.remove();
+        document.querySelector(".botao-adicionar").remove();
     });
 
     document.getElementById("btnConfirmar").addEventListener("click", () => {
         import ("./modalComparacao.js").then(module => { 
+            console.log("module", module);
             module.exibirComparacao(itensSelecionados);
         });
     });
+    console.log(document.getElementById("btnConfirmar"));
     return;
 }
 
 function adicionarBotoesAdicionar() {
-    const produtos = document.querySelectorAll(".product");
+    let botaoAdicionarExistente = document.querySelector(".botao-adicionar");
+    if (botaoAdicionarExistente) {
+        botaoAdicionarExistente.style.display = "block";
+        return;
+    }
+    const produtos = document.querySelectorAll(".product-container");
 
     produtos.forEach(produto => {
         const botaoAdicionar = document.createElement("button");
@@ -56,10 +65,12 @@ function adicionarBotoesAdicionar() {
 
 function adicionarAoComparador(produto) {
     const nome = produto.querySelector(".nome-produto").innerText;
-    const preco = produto.querySelector(".preco-produto").innerText;
     const imagem = produto.querySelector(".imagem-produto").src;
+    const preco = produto.querySelector(".preco-produto").innerText;
+    const loja = document.querySelector(".loja").innerText;
+    const aberto = document.querySelector(".loja-status").innerText === "Aberto";
 
-    const item = { nome, preco, imagem };
+    const item = { nome, imagem, preco, loja, aberto};
 
     if (!itensSelecionados.some(i => i.nome === item.nome)) {
         itensSelecionados.push(item);
@@ -80,8 +91,7 @@ function atualizarComparador() {
     itensSelecionados.forEach(item => {
         const div = document.createElement("div");
         div.classList.add("product", "mini");
-        div.innerHTML = `<img class="imagem-produto" src="${item.imagem}" alt="${item.nome}">
-                         <p class="preco-produto"><strong>${item.preco}</strong></p>  
+        div.innerHTML = `<img class="imagem-produto" src="${item.imagem}" alt="${item.nome}"> 
                          <p class="nome-produto">${item.nome}</p>`;
         itensContainer.appendChild(div);
     });

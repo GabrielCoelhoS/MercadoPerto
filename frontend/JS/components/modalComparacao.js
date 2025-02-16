@@ -1,4 +1,9 @@
-function exibirComparacao(produtos) {
+export function exibirComparacao(produtos) {
+    let modalSelecionarParaComparacaoExistente = document.getElementById("modalSelecionarParaComparacao");
+    if (modalSelecionarParaComparacaoExistente) {
+        modalSelecionarParaComparacaoExistente.remove();
+    }
+
     let modalExistente = document.getElementById("modalComparacao");
     if (modalExistente) {
         modalExistente.remove();
@@ -7,12 +12,13 @@ function exibirComparacao(produtos) {
     const modalComparacao = document.createElement("div");
     modalComparacao.id = "modalComparacao";
     modalComparacao.classList.add("modal");
-
-     modalComparacao.innerHTML = `
+    const comparacaoContainer = document.createElement("div");
+    comparacaoContainer.classList.add("comparacao-container");
+    comparacaoContainer.innerHTML = `
         <h2>Comparação de Produtos</h2>
         <div id="itensSelecionados"></div>
-        <button id="btnFechar">Fechar</button>
-        <div class="comparacao-container"></div>`;
+        <button id= "btnFechar">Fechar</button>
+        <div class="products"></div>`;
 
     produtos.forEach(produto => {
         const div = document.createElement("div");
@@ -28,8 +34,20 @@ function exibirComparacao(produtos) {
         statusLoja.innerText = produto.aberto ? "Aberto" : "Fechado";
         statusLoja.classList.add("loja-status", produto.aberto ? "aberto" : "fechado");
         div.appendChild(statusLoja);
-        modalComparacao.querySelector(".comparacao-container").appendChild(div);
+        comparacaoContainer.querySelector(".products").appendChild(div);
     })
-    modalComparacao.querySelector(btnFechar).onclick = () => modalComparacao.remove();
+
+    modalComparacao.appendChild(comparacaoContainer);
     document.body.appendChild(modalComparacao);
+
+    document.querySelector("#btnFechar").addEventListener("click", () => {
+        modalComparacao.remove();
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
 }

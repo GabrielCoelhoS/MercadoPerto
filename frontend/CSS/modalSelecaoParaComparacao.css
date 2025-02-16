@@ -16,8 +16,12 @@
     padding: 0;
 }
 
+.product-container{
+    position: relative;
+    
+}
+
 .modal {
-    display: none;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 10px;
@@ -88,7 +92,7 @@ button {
 }
 
 #btnCancelar {
-    background: #ccc;
+    background: #dc3545;
 }
 
 #btnConfirmar {

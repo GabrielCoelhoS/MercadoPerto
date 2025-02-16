@@ -1,10 +1,5 @@
 #modalComparacao {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    text-align: center;
+    border-radius: 0;
 }
 
 #modalComparacao h2 {
@@ -13,14 +8,14 @@
 }
 
 .comparacao-container {
+    background-color: #fff;
+    padding: 20px;
+    width: 50%;
+    height: 50%;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-}
-.preco-produto {
-    color: #28a745;
-    font-weight: bold;
 }
 
 .loja-status {
@@ -37,9 +32,11 @@
 
 #btnFechar {
     display: block;
-    margin: 20px auto;
+    margin-left: 20px;
     padding: 10px 15px;
     background-color: #dc3545;
+    width: 100px;
+    height: 40px;
     color: #fff;
     border: none;
     border-radius: 5px;
