@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".form-endereco");
     
-    // Referências aos campos
     const cepInput = document.getElementById("cep");
     const estadoInput = document.getElementById("estado");
     const cidadeInput = document.getElementById("cidade");
@@ -10,20 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const numeroInput = document.getElementById("numero");
     const complementoInput = document.getElementById("complemento");
 
-    // Função para aplicar a máscara no CEP
     function aplicarMascaraCep(valor) {
-        return valor.replace(/\D/g, "") // Remove tudo que não for número
-            .replace(/^(\d{5})(\d{3})$/, "$1-$2"); // Adiciona o traço
+        return valor.replace(/\D/g, "")
+            .replace(/^(\d{5})(\d{3})$/, "$1-$2");
     }
 
-    // Evento para aplicar a máscara de CEP
     cepInput.addEventListener("input", () => {
         cepInput.value = aplicarMascaraCep(cepInput.value);
     });
 
-    // Evento para preencher automaticamente estado e cidade ao inserir o CEP
     cepInput.addEventListener("blur", async () => {
-        const cep = cepInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+        const cep = cepInput.value.replace(/\D/g, "");
 
         if (cep.length === 8) {
             try {
@@ -35,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
-                // Preencher os campos de estado e cidade
                 estadoInput.value = data.uf;
                 cidadeInput.value = data.localidade;
                 bairroInput.value = data.bairro;
@@ -51,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        // Obter os valores dos campos
         const cep = cepInput.value;
         const estado = estadoInput.value;
         const cidade = cidadeInput.value;
@@ -60,13 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const numero = numeroInput.value;
         const complemento = complementoInput.value;
 
-        // Validação dos campos obrigatórios
         if (!cep || !estado || !cidade || !bairro || !endereco || !numero) {
             alert("Por favor, preencha todos os campos obrigatórios!");
             return;
         }
 
-        // Salvar os dados no localStorage
         localStorage.setItem("cep", cep);
         localStorage.setItem("estado", estado);
         localStorage.setItem("cidade", cidade);
@@ -75,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("numero", numero);
         localStorage.setItem("complemento", complemento);
 
-        // Redirecionar para a próxima página (pagina-final.html ou outra página desejada)
         window.location.href = "pagina-final.html";
     });
 
