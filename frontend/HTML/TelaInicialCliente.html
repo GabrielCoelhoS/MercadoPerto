@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercado Perto</title>
-    <link rel="stylesheet" href="../CSS/inicialCliente.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercado Perto - Cliente</title>
+  <!-- Link para o CSS -->
+  <link rel="stylesheet" href="../CSS/inicialCliente.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Mercado Perto</div>
-        <div class="search-container">
-            <input id="search-input" type="text" placeholder="Pesquise itens do Mercado">
-            <button id="search-bnt"><img src="imagens/lupa.png"  alt="Lupa"></button>
-        </div>
-        <div class="user-icon">
-            <img src="imagens/iconamoon_profile-fill.png" alt="">
-        </div>
-    </header>
-    <main>
-        <section class="results market">
-            <div class="container IndicacaoMercados">
-                <h2>Mercados fazendo sucesso</h2>
-                <div class="Markets">
-                    
-                </div>
-            </div>
-        </section>
-        <section class="results productAndMarketMini">
-            <div class="container IndicacaoProdutos">
-                <h2>Podutos indicados</h2>
-                <div class="products">
-                    
-                </div>
-            </div>
-        </section>
-    </main>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Adicionar ao Carrinho</h2>
-            <img id="modal-img" src="" alt="Produto">
-            <p id="modal-title"></p>
-            <p id="modal-price"></p>
-            <label for="quantity">Quantidade:</label>
-            <input type="number" id="quantity" min="1" value="1">
-            <button class="add-to-cart">Adicionar ao Carrinho</button>
-        </div>
+  <header>
+    <div class="logo">Mercado Perto</div>
+    <div class="search-container">
+      <input id="search-input" type="text" placeholder="Pesquise itens do Mercado">
+      <button id="search-bnt">
+        <img src="imagens/lupa.png" alt="Lupa">
+      </button>
     </div>
-    <script defer src="../JS/inicialCliente.js"></script>
+    <!-- Os ícones de usuário e carrinho serão adicionados via JS -->
+  </header>
+
+  <main>
+    <!-- Seção de Mercado -->
+    <section class="results market">
+      <div class="container IndicacaoMercados">
+        <h2>Mercados fazendo sucesso</h2>
+        <div class="Markets">
+          <!-- Cards do mercado serão inseridos via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Produtos Indicados -->
+    <section class="results productAndMarketMini">
+      <div class="container IndicacaoProdutos">
+        <h2>Produtos Indicados</h2>
+        <div class="products">
+          <!-- Cards de produtos serão inseridos via JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Detalhes/Adicionar ao Carrinho -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- Dados do produto -->
+      <h2 id="modal-title">Nome: </h2>
+      <img id="modal-img" src="sem-imagem.png" alt="Produto">
+      <p id="modal-price">Preço: R$0,00</p>
+      <p id="modal-description">Descrição: </p>
+      <p id="modal-session">Sessão: </p>
+      <p id="modal-store">Loja: </p>
+      <label for="quantity">Quantidade:</label>
+      <input type="number" id="quantity" min="1" value="1">
+      <button class="add-to-cart">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+  <!-- Os modais de pesquisa e do carrinho serão criados dinamicamente via JavaScript -->
+
+  <!-- Inclusão do JavaScript -->
+  <script src="../JS/inicialCliente.js"></script>
 </body>
 </html>
