@@ -30,7 +30,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     localStorage.setItem('users', JSON.stringify(users));
     
     setTimeout(function() {
-      window.location.href = '../../index.html';
+      window.location.href = '../HTML/telaInicialCliente';
     }, 500); 
   });
 
