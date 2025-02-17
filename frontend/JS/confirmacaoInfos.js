@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Preencher os campos com os dados armazenados no localStorage
     document.getElementById("cep").value = localStorage.getItem("cep");
     document.getElementById("estado").value = localStorage.getItem("estado");
     document.getElementById("cidade").value = localStorage.getItem("cidade");
@@ -13,13 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("nome-mercado").value = localStorage.getItem("nomeMercado");
     document.getElementById("telefone").value = localStorage.getItem("telefone");
 
-    // Configurar o botão "Voltar" para redirecionar para a página anterior
-    document.querySelector('.btn-back').addEventListener('click', () => {
-        window.location.href = "../HTML/CadastroInfoLocalizacaoEmpresa.html";  // Altere conforme necessário para redirecionar corretamente
+    document.querySelector('.btn-voltar').addEventListener('click', () => {
+        window.location.href = "../HTML/cadastroInfoLocalizacaoEmpresa.html";corretamente
     });
-
-    // Botão "Continuar" - mensagem de sucesso
-    document.querySelector('.btn-submit').addEventListener('click', (event) => {
+    document.querySelector('.btn-continuar').addEventListener('click', (event) => {
         event.preventDefault();
         window.location.href = "../HTML/primeira_empresa.html";
     });

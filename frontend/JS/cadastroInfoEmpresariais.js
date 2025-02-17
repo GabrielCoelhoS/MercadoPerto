@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("nomeMercado", nomeMercado);
         localStorage.setItem("telefone", telefone);
 
-        window.location.href = "../HTML/CadastroInfoLocalizacaoEmpresa.html";
+        window.location.href = "../HTML/cadastroInfoLocalizacaoEmpresa.html";
     });
 
     const voltarBtn = document.querySelector(".btn-voltar");

@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Informações do Mercado</title>
-    <link rel="stylesheet" href="../CSS/CadastroInfoEmpresariais.css">
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="stylesheet" href="../CSS/formularios.css">
 </head>
 <body>
-    <header class="header">
+    <style>
+        body {
+            background: url('../imagens/fundo\ login222.jpg') no-repeat center center fixed;
+            align-items: center;
+            background-size: cover;
+        }
+        h2 {
+            color: #ffffff;
+        }
+
+        label {
+            color: #ffffff;
+        }
+
+    </style>
+    <header>
         <h1 class="logo">Mercado Perto</h1>
     </header>
-    <main class="container">
+    <main class="main-container">
         <h2>Informações do Mercado</h2>
         <form class="form-info-mercado">
             <div class="form-group">
@@ -29,12 +45,12 @@
                 <label for="telefone">Telefone</label>
                 <input type="text" id="telefone" placeholder="(00) 00000-0000">
             </div>
-            <div class="form-buttons">
+            <div class="form-actions">
                 <button type="button" class="btn btn-voltar">Voltar</button>
                 <button type="submit" class="btn btn-continuar">Continuar</button>
             </div>
         </form>
     </main>
-    <script src="../JS/CadatroInfoEmpresariais.js"></script>
+    <script src="../JS/cadastroInfoEmpresariais.js"></script>
 </body>
 </html>

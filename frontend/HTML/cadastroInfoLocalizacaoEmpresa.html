@@ -4,13 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Endereço</title>
-    <link rel="stylesheet" href="../CSS/CadastroInfoLocalizacao.css">
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="stylesheet" href="../CSS/formularios.css">
+    <link rel="stylesheet" href="../CSS/adicionalFormulariosEmpresas.css">
 </head>
 <body>
-    <header class="header">
+    <style>
+        body {
+            background-image: url('../imagens/login2.jpeg');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .form-row .form-group:last-child {
+            margin-right: 0; 
+        }
+
+        .main-container {
+            display: block;
+            margin: 100px auto;
+        }
+        
+        h2 {
+            color: #ffffff;
+        }
+
+        label {
+            color: #ffffff;
+        }
+
+        .btn-voltar {
+            width: 100%;
+        }
+
+        .btn-continuar {
+            width: 100%;
+        }
+
+    </style>
+    
+    <header>
         <h1 class="logo">Mercado Perto</h1>
     </header>
-    <main class="container">
+    <main class="main-container">
         <h2>Endereço</h2>
         <form class="form-endereco">
             <div class="form-group">
@@ -45,12 +81,12 @@
                     <input type="text" id="complemento" placeholder="Complemento">
                 </div>
             </div>
-            <div class="form-buttons">
+            <div class="form-actions">
                 <button type="button" class="btn btn-voltar">Voltar</button>
                 <button type="submit" class="btn btn-continuar">Continuar</button>
             </div>
         </form>
     </main>
-    <script src="../JS/CadastroInfoLocalizacao.js"></script>
+    <script src="../JS/cadastroInfoLocalizacao.js"></script>
 </body>
 </html>

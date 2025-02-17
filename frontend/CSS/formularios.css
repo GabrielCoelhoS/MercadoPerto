@@ -11,7 +11,7 @@ body {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinhamento à direita */
+    align-items: flex-end;
     justify-content: center;
     min-height: 100vh;
     position: relative;
@@ -27,36 +27,13 @@ body::before {
     background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
-a{
-    text-decoration: none;
-}
-
-.header {
-    background-color: rgba(0, 74, 173, 0.9);
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.header .logo {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
 .main-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 500px; /* Deixando o formulário mais fino */
-    padding: 20px;
-    margin-top: 80px; /* Posicionando um pouco mais acima */
+    max-width: 500px;
     flex-direction: column;
 }
 
@@ -94,11 +71,11 @@ input {
 
 .form-actions {
     display: flex;
+    gap: 5vh;
     justify-content: center;
     width: 100%;
 }
-
-button {
+button{
     padding: 12px 25px;
     font-size: 1.1rem;
     border: none;
@@ -106,6 +83,13 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+
+.btn-voltar {
+    background-color: #ccc;
+    color: #000;
+}
+
 
 .btn-continuar {
     background-color: #004aad;

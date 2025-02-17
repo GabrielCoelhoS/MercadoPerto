@@ -1,0 +1,10 @@
+input:focus {
+    border-color: #0055a5;
+    outline: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
