@@ -14,20 +14,7 @@ body {
 }
 
 /* Estilo do cabeçalho */
-header {
-    background-color: rgba(0, 74, 173, 0.9);
-    color: rgb(255, 255, 255);
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 60px;
-}
+
 
 /* Estilo para as seções */
 section {
