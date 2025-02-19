@@ -16,7 +16,10 @@ body {
 }
 
 /* Estilo do cabeçalho */
-
+.butao{
+  background-color: #002f5e;
+  color: white;
+}
 
 /* Estilo para as seções */
 section {
