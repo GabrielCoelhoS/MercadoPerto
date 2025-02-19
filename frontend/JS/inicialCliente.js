@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Variável global para armazenar o id do produto selecionado
     let currentProductId = null;
-  
+    const markets = document.querySelector(".Markets");
+    markets.addEventListener("click", (event) => {
+      window.location.href = "../HTML/primeiro_mercado_cliente.html";
+    });
     /* =======================================================
        1. Carregar as informações do Mercado (localStorage)
        ======================================================= */
