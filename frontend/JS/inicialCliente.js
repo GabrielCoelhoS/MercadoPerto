@@ -296,36 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "none";
       });
     }
-  
-    /* =======================================================
-       5. Ícones no Header: Usuário e Carrinho
-       ======================================================= */
-    const header = document.querySelector("header");
-    if (header) {
-      // Ícone do Usuário (já existente)
-      const userIcon = document.createElement("span");
-      userIcon.classList.add("user-icon");
-      userIcon.innerHTML = "\uD83D\uDC64"; // emoji de usuário
-      userIcon.style.cursor = "pointer";
-      userIcon.style.fontSize = "24px";
-      userIcon.addEventListener("click", () => {
-        window.location.href = "../HTML/informacoesUsuario.html";
-      });
-      header.appendChild(userIcon);
-  
-      // Ícone do Carrinho
-      const cartIcon = document.createElement("span");
-      cartIcon.classList.add("cart-icon");
-      cartIcon.innerHTML = "🛒"; // emoji de carrinho
-      cartIcon.style.cursor = "pointer";
-      cartIcon.style.fontSize = "24px";
-
-      cartIcon.addEventListener("click", () => {
-        openCartModal();
-      });
-      header.appendChild(cartIcon);
-    }
-  
     /* =======================================================
        6. Modal do Carrinho
        ======================================================= */
