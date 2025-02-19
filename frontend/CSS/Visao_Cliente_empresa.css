@@ -1,0 +1,548 @@
+/* Reset básico para garantir que as seções fiquem no formato correto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c7c7c7;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+    color: #333;
+
+}
+
+/* Estilo do cabeçalho */
+
+
+/* Estilo para as seções */
+section {
+    margin: 10px auto;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 96%;
+}
+
+/* Estilo do market-info */
+#market-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.market-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.market-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.market-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+/* Adiciona espaçamento entre as informações do mercado */
+.market-details span {
+    display: block; /* Garante que cada informação ocupe uma linha */
+    margin-bottom: 10px; /* Adiciona o espaçamento desejado entre os itens */
+}
+
+/* Botão de edição */
+.edit-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #003366;
+}
+
+/* Formulário de edição */
+#edit-form {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 20px auto;
+}
+
+#edit-form .form-field {
+    margin-bottom: 15px;
+}
+
+#edit-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#edit-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+#edit-form input:focus {
+    border-color: #003366;
+    outline: none;
+}
+
+#edit-form .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#edit-form .form-actions button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+#edit-form #save-btn {
+    background-color: #28a745;
+}
+
+#edit-form #cancel-btn {
+    background-color: #dc3545;
+}
+
+/* Categorias */
+#categories {
+    display: flex;
+    align-items: center; /* Alinha as categorias no centro */
+    justify-content: flex-start; /* Alinha as categorias à esquerda */
+    gap: 15px; /* Espaço entre as categorias */
+    padding: 20px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    height: 150px;
+}
+
+.category-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.add-category {
+    font-size: 24px;
+    background: #ddd;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Registro de produtos */
+#product-registration {
+    text-align: center;
+    font-size: 16px;
+}
+
+.register-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.register-btn {
+    background: #ffcc00;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Mais vendidos */
+#best-sellers {
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.product {
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.produto-img {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível da categoria */
+    height: 100px; /* Ajusta a altura para manter as proporções */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+    margin-bottom: 10px;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Classe para esconder o formulário de edição */
+.hidden {
+    display: none;
+}
+
+/* Estilo do formulário de edição dentro do market-info */
+#market-info input {
+    display: inline-block;
+    margin-top: 10px;
+    width: calc(100% - 20px); /* Ajuste da largura para os inputs */
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    font-size: 1rem;
+}
+
+#market-info textarea {
+    display: inline-block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    font-size: 1rem;
+}
+
+#market-info input:focus, #market-info textarea:focus {
+    border-color: #003366;
+    outline: none;
+}
+
+/* Estilo dos campos editáveis (com inputs) */
+#market-info .edit-btn {
+    font-size: 24px;
+    color: #28a745; /* Cor verde para o lápis de edição */
+}
+
+#market-info input, #market-info textarea {
+    background-color: #fafafa;
+    font-family: inherit;
+}
+
+/* Adicionando um efeito hover no botão de edição */
+.edit-btn:hover {
+    opacity: 0.7;
+}
+
+/* Adicionando espaçamento entre os itens do market-info */
+#market-info .market-details p {
+    margin-bottom: 10px;
+}
+
+/* Ajustes gerais para o layout de toda a página */
+section {
+    padding-top: 80px; /* Garantir que o conteúdo da página não fique escondido pelo cabeçalho fixo */
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Classe para esconder o formulário de edição */
+.hidden {
+    display: none;
+}
+/* ===== Modal ===== */
+.modal {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Fica acima de todos os elementos */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px; /* Largura máxima do modal */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* Para posicionar o botão de fechar dentro dele */
+  }
+  
+  /* Botão de fechar (X) no canto superior direito */
+  .close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+  }
+  
+  .close-modal-btn:hover {
+    opacity: 0.7;
+  }
+  
+  /* Corpo do modal */
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Área de upload */
+  .upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upload-label {
+    cursor: pointer;
+  }
+  
+  .upload-box {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #999;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .upload-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Esconde o input file padrão */
+  .hidden {
+    display: none;
+  }
+  
+  /* Formulário de cadastro manual */
+  #manual-product-form .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #manual-product-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  #manual-product-form input[type="text"],
+  #manual-product-form input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #manual-product-form input:focus {
+    outline: none;
+    border-color: #003366;
+  }
+  
+  .form-actions {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  /* Botões do formulário */
+  .save-btn, .cancel-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .save-btn {
+    background-color: #1100ff; 
+    color: #fff;
+  }
+  
+  .cancel-btn {
+    background-color:  #ffcc00; 
+    color: #000000;
+  }
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+  
+  .delete-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .delete-category-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .category-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Estilo para o menu dropdown */
+#header-menu {
+    position: absolute;
+    top: 60px; /* Ajuste conforme a altura do seu header */
+    right: 10px; /* Alinha à direita; ajuste conforme necessário */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    z-index: 1001;
+  }
+  
+  #header-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #header-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+  
+  #header-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  #header-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* A classe .hidden já deve estar definida para esconder elementos, por exemplo: */
+  .hidden {
+    display: none;
+  }
+  #gerenciar-temas{
+    color: blue;
+  }
+  #adicionar-market-info{
+    color: blue;
+  }
+  a{
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus, select:focus, textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+      transform: translateY(-5px);
+  }
+
