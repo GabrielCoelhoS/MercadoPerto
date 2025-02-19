@@ -296,12 +296,7 @@ button:hover {
     opacity: 0.8;
 }
 
-.produto-img {
-    width: 100%; /* Faz a imagem ocupar toda a largura disponível da categoria */
-    height: 100px; /* Ajusta a altura para manter as proporções */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
-    margin-bottom: 10px;
-}
+
 
 /* Classe para esconder o formulário de edição */
 .hidden {
