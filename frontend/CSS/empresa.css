@@ -11,6 +11,8 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 70px;
+    color: #333;
+
 }
 
 /* Estilo do cabeçalho */
@@ -201,6 +203,7 @@ section {
 }
 
 .product {
+    transition: transform 0.3s, box-shadow 0.3s;
     background: #ffffff;
     padding: 10px;
     border-radius: 10px;
@@ -219,6 +222,11 @@ button:hover {
     height: 100px; /* Ajusta a altura para manter as proporções */
     object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
     margin-bottom: 10px;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Classe para esconder o formulário de edição */
@@ -508,4 +516,38 @@ button:hover {
   a{
     text-decoration: none;
   }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
   
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus, select:focus, textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+      transform: translateY(-5px);
+  }
+
