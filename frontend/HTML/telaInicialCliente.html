@@ -30,6 +30,7 @@
       <div class="container IndicacaoMercados">
         <h2>Mercados fazendo sucesso</h2>
         <div class="Markets">
+          
         </div>
       </div>
     </section>
@@ -60,5 +61,15 @@
 
   <script src="../JS/inicialCliente.js"></script>
   <script src="../JS/headerClientes.js"></script>
+  <script>
+    // Seleciona a div com a classe "Markets"
+    const marketsDiv = document.querySelector('.Markets');
+  
+    // Adiciona o evento de clique à div
+    marketsDiv.addEventListener('click', () => {
+      // Redireciona para outro site
+      window.location.href = '../HTML/primeiro_mercado_cliente.html'; // substitua pela URL desejada
+    });
+  </script>
 </body>
 </html>
