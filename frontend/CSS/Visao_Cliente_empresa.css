@@ -127,6 +127,11 @@ section {
     background-color: #dc3545;
 }
 
+.voltar{
+  background-color: #002f5e;
+  color: white;
+}
+
 /* Categorias */
 #categories {
     display: flex;

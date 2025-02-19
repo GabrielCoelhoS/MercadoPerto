@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const VoltarBtns = document.getElementsByClassName("voltar");
+  Array.from(VoltarBtns).forEach(btn => {
+    btn.addEventListener("click", () => {
+      window.location.href = "../HTML/telaInicialCliente.html";
+    });
+  });
     // =====================================================
     // 1. Carregar informações do market-info
     // =====================================================

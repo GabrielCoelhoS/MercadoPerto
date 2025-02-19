@@ -34,8 +34,8 @@
             
             <div id="filter-menu" class="filter-dropdown">
                 <ul>
-                    <li><button>Preço (Menor para Maior)</button></li>
-                    <li><button>Preço (Maior para Menor)</button></li>
+                    <li id="menor"><button>Preço (Menor para Maior)</button></li>
+                    <li id="maior"><button>Preço (Maior para Menor)</button></li>
                     <li><button>Lojas abertas<button></li>
                     <li><button>Melhor Avaliação</button></li>
                 </ul>
@@ -48,12 +48,12 @@
               <h2 class="loja">Mercado do Fulano</h2>
               <div class="sub-texts" id="descricoes-mercado-pesquisa">
                 <img src="../imagens/ic_round-star.png" alt="">
-                <p class="mercadoAvaliacao">4.7</p>
+                <p class="mercadoAvaliacao">0.0</p>
                 <p> • </p>
                 <p class="loja-status">Fechado</p>
               </div>
               <div class="products">
-                <!-- Os produtos cadastrados serão adicionados aqui via JavaScript -->
+                
               </div>
             </div>
           </section>
@@ -70,7 +70,8 @@
             <button class="add-to-cart">Adicionar ao Carrinho</button>
         </div>
     </div>
-    <script defer type="module" src="../JS/main.js"></script>
+    <script defer type="module" src="../JS/components/search.js"></script>
+    <script src="../JS/components/searchEvent.js"></script>
     <script defer type="module" src="../JS/components/modalSelecaoParaComparacao.js"></script>
     <script defer type="module" src="../JS/components/modalAdicionar.js"></script>
     <script src="../JS/cadastroExibicao.js"></script>
